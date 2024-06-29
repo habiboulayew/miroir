@@ -1,0 +1,124 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" width="1080px" height="540px" viewBox="0 0 1080 540">
+<defs>
+<g id="Mask_2_MASK_0_FILL">
+<path fill="#FFFFFF" stroke="none" d="
+M 1300 583.35
+L 1300 0 0 0 0 583.35 1300 583.35 Z"/>
+</g>
+
+<g id="book_0_Layer2_0_FILL">
+<path fill="#1976D2" stroke="none" d="
+M 800 450
+L 800 0 0 0 0 450 800 450 Z"/>
+</g>
+
+<g id="Symbol_4_0_Layer0_0_FILL">
+<path fill="#FFFFFF" stroke="none" d="
+M 197.5 -220
+L -197.5 -220 -197.5 220 197.5 220 197.5 -220 Z"/>
+</g>
+
+<g id="original_head_0_Layer0_0_FILL">
+<path fill="#FFFFFF" stroke="none" d="
+M 345.55 168.95
+Q 336.2 137.65 329 127.5 322.75 118.65 306.65 100.8 285.6 77.45 264.15 57.85 201.1 0.35 162.25 0 129.7 -0.35 98.9 15.85 70.3 30.95 47.3 57.95 25.1 84 12.6 115.75 -0.1 147.95 0 178.75 0 201.1 14.75 222.2 23.5 234.8 47.35 257.8 71.3 280.95 80.7 294.25 96.25 316.45 97.5 340.25 98.6 361.7 88.75 396.2 82.4095703125 418.282421875 77.65 428.7
+L 218.35 428.7
+Q 220.5796875 376.016015625 258.65 349.4 275.75 337.45 298.5 332.25 319.5 327.45 342.5 329 353.05 329.75 362.55 316.45 371.75 303.7 372.25 289.5 373.2 265.75 364.55 234.15 362.05 224.95 357.9 212.3 354.1 200.7 353.5 198.25 350.25 184.65 345.55 168.95 Z"/>
+</g>
+
+<path id="book_0_Layer0_0_1_STROKES" stroke="#1976D2" stroke-width="26" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 273.3
+L 755 273.3"/>
+
+<path id="book_0_Layer0_0_2_STROKES" stroke="#1976D2" stroke-width="14" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 105.8
+L 755 105.8"/>
+
+<path id="book_0_Layer0_0_3_STROKES" stroke="#1976D2" stroke-width="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 50
+L 755 50"/>
+
+<path id="book_0_Layer0_0_4_STROKES" stroke="#1976D2" stroke-width="18" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 161.7
+L 755 161.7"/>
+
+<path id="book_0_Layer0_0_5_STROKES" stroke="#1976D2" stroke-width="22" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 217.5
+L 755 217.5"/>
+
+<path id="book_0_Layer0_0_6_STROKES" stroke="#1976D2" stroke-width="28" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 329.2
+L 755 329.2"/>
+
+<path id="book_0_Layer0_0_7_STROKES" stroke="#1976D2" stroke-width="32" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="3" fill="none" d="
+M 440 385
+L 755 385"/>
+
+<path id="original_head_0_Layer0_0_1_STROKES" stroke="#F44336" stroke-width="11" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="3" fill="none" d="
+M 218.375 428.7
+Q 220.5796875 376.016015625 258.65 349.4 275.75 337.45 298.5 332.25 319.5 327.45 342.5 329 353.05 329.75 362.55 316.45 371.75 303.7 372.25 289.5 373.2 265.75 364.55 234.15 362.05 224.95 357.9 212.3 354.1 200.7 353.5 198.25 350.25 184.65 345.55 168.95 336.2 137.65 329 127.5 322.75 118.65 306.65 100.8 285.6 77.45 264.15 57.85 201.1 0.35 162.25 0 129.7 -0.35 98.9 15.85 70.3 30.95 47.3 57.95 25.1 84 12.6 115.75 -0.1 147.95 0 178.75 0 201.1 14.75 222.2 23.5 234.8 47.35 257.8 71.3 280.95 80.7 294.25 96.25 316.45 97.5 340.25 98.6 361.7 88.75 396.2 82.4095703125 418.282421875 77.675 428.7"/>
+</defs>
+
+<mask id="Mask_Mask_1">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#Mask_2_MASK_0_FILL"/>
+</g>
+</mask>
+
+<g mask="url(#Mask_Mask_1)">
+<g transform="matrix( 1.199981689453125, 0, 0, 1.199951171875, 120,0) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#book_0_Layer2_0_FILL"/>
+</g>
+
+<g transform="matrix( 0.9699859619140625, 0, 0, 0.9699859619140625, 596.9,225) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#Symbol_4_0_Layer0_0_FILL"/>
+</g>
+</g>
+
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#book_0_Layer0_0_1_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_2_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_3_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_4_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_5_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_6_STROKES"/>
+
+<use xlink:href="#book_0_Layer0_0_7_STROKES"/>
+</g>
+</g>
+</g>
+
+<g mask="url(#Mask_Mask_1)">
+<g transform="matrix( 1.1867218017578125, 0, 0, 1.1867218017578125, 7.7,44.45) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#original_head_0_Layer0_0_FILL"/>
+
+<use xlink:href="#original_head_0_Layer0_0_1_STROKES"/>
+</g>
+</g>
+
+<g transform="matrix( 1.1867218017578125, 0, 0, 1.1867218017578125, 54.35,44.45) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#original_head_0_Layer0_0_FILL"/>
+
+<use xlink:href="#original_head_0_Layer0_0_1_STROKES"/>
+</g>
+</g>
+
+<g transform="matrix( 1.1867218017578125, 0, 0, 1.1867218017578125, 101.05,44.45) ">
+<g transform="matrix( 1, 0, 0, 1, 0,0) ">
+<use xlink:href="#original_head_0_Layer0_0_FILL"/>
+
+<use xlink:href="#original_head_0_Layer0_0_1_STROKES"/>
+</g>
+</g>
+</g>
+</svg>

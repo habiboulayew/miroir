@@ -1,0 +1,26 @@
+#field { margin-left: .5em; float: left; }
+#field, label { float: left; font-family: Arial, Helvetica, sans-serif; font-size: small; }
+br { clear: both; }
+input { border: 1px solid black; margin-bottom: .5em;  }
+
+input.error, select.error,input.error:focus, select.error:focus {
+    background: rgb(251, 227, 228);
+    border: 1px solid #fbc2c4;
+    color: #8a1f11;
+}
+
+label.error {
+    background: url('unchecked.gif') no-repeat;
+    padding-left: 16px;
+    margin-left: .3em;
+    margin-top: 3px;
+
+    color: #e55957;
+    margin-left: 0;
+}
+label.valid {
+    background: url('checked.gif') no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
