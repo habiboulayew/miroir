@@ -181,12 +181,13 @@
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Se connecter
                         </button>
                         <br>
-                        <hr>
+                      <!--  
+                        <hr>    
                         <br>
-                        <a href="<?= site_url('C_connexion/con_edu') ?>" style="color: #ff902b;font-weight: bold">
+                        <a href="<//?= site_url('C_connexion/con_edu') ?>" style="color: #ff902b;font-weight: bold">
                                 <button class="btn btn-lg btn-success btn-block text-uppercase" type="button">
                                     Se connecter  avec mon compte <u>EDUCATION</u></button>
-                        </a>
+                        </a> -->
                     </form>
                 </div>
             </div>

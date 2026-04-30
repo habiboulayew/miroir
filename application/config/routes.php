@@ -55,3 +55,13 @@ $route['men'] = 'C_connexion/con_edu';
 $route['mefpa'] = 'C_connexion/con_login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['document/generer/(:num)'] = 'document/generer/$1';
+$route['document/(:num)']         = 'document/index/$1';
+$route['document']                = 'document/index';
+
+// Si tu as quelque chose comme ça :
+//$route['Document/(:num)/(:num)'] = 'Document/index/$1/$2';
+
+
+

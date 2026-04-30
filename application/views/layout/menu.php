@@ -75,7 +75,12 @@
     <?php if(!empty($this->session->data_menu)): ?>
         <?php foreach ($this->session->data_menu as $menu): ?>
             <li class="nav-item">
+                
                 <a class="nav-link <?= $id == $menu->id_document ? 'active' : '' ?>" href="<?= site_url("Document/index/$menu->id_document/$menu->password/") ?>">
+                
+<!--
+<a class="nav-link <?//= $id == $menu->id_document ? 'active' : '' ?>" href="<?//= site_url("C_document/afficher_pdf/$menu->id_document") ?>">
+-->
                     <?=($menu->password == '1' || $menu->password == '2')? '<span data-feather="lock"></span>' : '<span data-feather="file-text"></span>' ?>
                     <?=$menu->titre?>
                 </a>

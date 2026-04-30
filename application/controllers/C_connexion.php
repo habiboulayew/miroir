@@ -94,6 +94,7 @@ class C_connexion extends CI_Controller
 
     public function con_login()
     {
+
         if(empty($_POST)){
             if(!empty($this->session->id_personnel))
                 header("Location:".site_url("acceuil"));
@@ -121,7 +122,10 @@ class C_connexion extends CI_Controller
 				$this->session->set_userdata('email_pro', $user->email_pro);
 				$this->session->set_userdata('fonction', $user->fonction);
 				$this->session->set_userdata('id_profil', $user->id_profil);
+
+                session_write_close(); // ← AJOUT : forcer l'écriture session avant redirect
                 header("Location:".site_url("acceuil"));
+                exit(); // ← AJOUT : arrêter l'exécution proprement
             }
         }
     }

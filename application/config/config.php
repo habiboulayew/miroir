@@ -18,12 +18,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
 | The auto-detection mechanism exists only for convenience during
 | development and MUST NOT be used in production!
-|
+
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://miroir.education.sn/';
+//config['base_url'] = 'https://miroir.education.sn/';
+$config['base_url'] = 'http://localhost/miroir';
 
 /*
 |--------------------------------------------------------------------------
@@ -223,7 +224,8 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+//$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------

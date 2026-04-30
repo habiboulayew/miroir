@@ -239,7 +239,6 @@
             url_delete: "<?=site_url('C_document/delete')?>",
         });
 
-
         $.fn.afterAdd = function (args) {
             $('#id_document').val('');
             $('#file_name').prop('disabled', false);

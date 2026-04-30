@@ -5,7 +5,12 @@
 <meta name="generator" content="Jekyll v3.8.5">
 <title>MEN/MFPAI-<?= date('Y') ?></title>
 <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/favicon.png">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+
+<!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>-->
+<!-- <script src="assets/jquery-3.3.1.min.js"></script>  -->
+
+<script src="<?= base_url('assets/jquery-3.3.1.min.js') ?>"></script>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
