@@ -90,4 +90,19 @@ class C_personnel extends MY_Controller
         $result = $this->personnel->save_password($id_personnel,$oldPassword,$newPassword);
         show_json($result);
     }
+
+
+    public function reset_password()
+     {
+    $id_personnel = $this->input->post('id_personnel');
+
+        if (empty($id_personnel)) {
+            show_json(['status' => 'error', 'message' => "Identifiant du personnel manquant."]);
+            return;
+        }
+
+    $result = $this->personnel->reinitialiser_password($id_personnel);
+    show_json($result);
+     }
+
 }

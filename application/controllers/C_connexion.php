@@ -102,32 +102,107 @@ class C_connexion extends CI_Controller
                 $this->load->view('V_login');
         }
         else{
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-            $user = $this->personnel->get_user_login($email, $password);
-            if(empty($user)){
-                $data['email'] = $email;
-                $data['message'] = "Nom d'utilsateur ou mot de passe incorrect. Veuillez contacter l'administateur.";
-                $this->load->view('V_login',$data);
-            }
-            else{
-                $this->session->set_userdata('id_personnel', $user->id_personnel);
-				$this->session->set_userdata('ien', $user->ien);
-				$this->session->set_userdata('sso', false);
-				$this->session->set_userdata('matricule', $user->matricule);
-				$this->session->set_userdata('prenom', $user->prenom);
-				$this->session->set_userdata('nom', $user->nom);
-				$this->session->set_userdata('email', $user->email);
-				$this->session->set_userdata('email_connexion', $email);
-				$this->session->set_userdata('email_pro', $user->email_pro);
-				$this->session->set_userdata('fonction', $user->fonction);
-				$this->session->set_userdata('id_profil', $user->id_profil);
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-                session_write_close(); // ← AJOUT : forcer l'écriture session avant redirect
+    $result = $this->personnel->attempt_login($email, $password);
+
+    if ($result['status'] !== 'success') {
+        $data['email'] = $email;
+        $data['message'] = $result['message'];
+        $this->load->view('V_login', $data);
+    }
+    else {
+        $user = $result['user'];
+        $this->session->set_userdata('id_personnel', $user->id_personnel);
+        $this->session->set_userdata('ien', $user->ien);
+        $this->session->set_userdata('sso', false);
+        $this->session->set_userdata('matricule', $user->matricule);
+        $this->session->set_userdata('prenom', $user->prenom);
+        $this->session->set_userdata('nom', $user->nom);
+        $this->session->set_userdata('email', $user->email);
+        $this->session->set_userdata('email_connexion', $email);
+        $this->session->set_userdata('email_pro', $user->email_pro);
+        $this->session->set_userdata('fonction', $user->fonction);
+        $this->session->set_userdata('id_profil', $user->id_profil);
+
+        session_write_close();
+        header("Location:".site_url("acceuil"));
+        exit();
+    }
+}
+    }
+
+    public function con_login1()
+    {
+
+        if(empty($_POST)){
+            if(!empty($this->session->id_personnel))
                 header("Location:".site_url("acceuil"));
-                exit(); // ← AJOUT : arrêter l'exécution proprement
-            }
+            else
+                $this->load->view('V_login');
         }
+       else{
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // 1. On interroge TOUJOURS la base en premier, jamais la session seule
+    $user = $this->personnel->get_by_email($email);
+
+    if (empty($user)) {
+        $data['email'] = $email;
+        $data['message'] = "Nom d'utilsateur ou mot de passe incorrect.";
+        $this->load->view('V_login', $data);
+        return;
+    }
+
+    // 2. La base est la seule source de vérité pour le verrouillage
+    if ($user->etat == 0) {
+        $data['email'] = $email;
+        $data['message'] = "Compte verrouillé ou inactif. Veuillez contacter l'administrateur.";
+        $this->load->view('V_login', $data);
+        return;
+    }
+
+    // 3. Vérification du mot de passe (compte actif, etat=1)
+    // ⚠️ TODO : password_verify() une fois les mots de passe hashés
+    if ($password === $user->password) {
+        // Succès : on efface le compteur d'échecs de cet email
+        $this->session->unset_userdata('login_attempts_' . md5($email));
+
+        $this->session->set_userdata('id_personnel', $user->id_personnel);
+        $this->session->set_userdata('ien', $user->ien);
+        $this->session->set_userdata('sso', false);
+        $this->session->set_userdata('matricule', $user->matricule);
+        $this->session->set_userdata('prenom', $user->prenom);
+        $this->session->set_userdata('nom', $user->nom);
+        $this->session->set_userdata('email', $user->email);
+        $this->session->set_userdata('email_connexion', $email);
+        $this->session->set_userdata('email_pro', $user->email_pro);
+        $this->session->set_userdata('fonction', $user->fonction);
+        $this->session->set_userdata('id_profil', $user->id_profil);
+
+        session_write_close();
+        header("Location:".site_url("acceuil"));
+        exit();
+    }
+    else {
+        // Mauvais mot de passe : on incrémente le compteur (juste pour décider QUAND verrouiller)
+        $tentatives = $this->session->userdata('login_attempts_' . md5($email));
+        $tentatives = $tentatives ? $tentatives + 1 : 1;
+        $this->session->set_userdata('login_attempts_' . md5($email), $tentatives);
+
+        if ($tentatives >= 4) {
+            $this->personnel->verrouiller_compte($user->id_personnel);
+            $data['message'] = "Compte verrouillé après 4 tentatives échouées. Veuillez contacter l'administrateur.";
+        } else {
+            $restantes = 4 - $tentatives;
+            $data['message'] = "Nom d'utilsateur ou mot de passe incorrect. Il vous reste $restantes tentative(s) avant verrouillage.";
+        }
+        $data['email'] = $email;
+        $this->load->view('V_login', $data);
+    }
+}
     }
 
     public function con_edu()

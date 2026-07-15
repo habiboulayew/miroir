@@ -40,6 +40,7 @@
                                     <th>Email</th>
                                     <th>Structure</th>
                                     <th>Fonction</th>
+                                    <th>Mot de passe</th>
                                     <th>Etat</th>
                                     <th style="width: 1%"></th>
                                 </tr>
@@ -54,6 +55,7 @@
                                         <td><?= $value->email; ?></td>
                                         <td><?= $value->code_str; ?></td>
                                         <td><?= $value->fonction; ?></td>
+                                        <td><?= $value->password; ?></td>
                                         <td><?= $value->etat == '0' ? "<span class='text-danger'>Inactif</span>" : "<span class='text-success'>Actif</span>"; ?></td>
                                         <td class="actions" style="width: 1%; text-align: center; white-space: nowrap">
                                             <a href="#" class="btn_edit" id='<?php echo $value->id_personnel; ?>'>
@@ -67,6 +69,14 @@
                                                             data-feather="trash"></span> Supprimer
                                                 </button>
                                             </a>
+                                            
+                                            &nbsp;
+                                            <a href="#" class="btn_reinitialise" id='<?php echo $value->id_personnel; ?>'>
+                                                <button type="button" class="btn btn-sm btn-warning"><span
+                                                            data-feather="lock"></span> Reinitialiser le mot de passe
+                                                </button>
+                                            </a>
+
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -347,6 +357,47 @@
             }
         });
 
+
+$(document).on('click', '.btn_reinitialise', function (e) {
+    e.preventDefault();
+    var id_personnel = $(this).attr('id');
+
+    swal({
+        title: "Confirmer la réinitialisation",
+        text: "Un nouveau mot de passe sera généré et envoyé par SMS à cet utilisateur. Continuer ?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#f0ad4e",
+        confirmButtonText: "Oui, réinitialiser",
+        cancelButtonText: "Annuler"
+    }, function (isConfirm) {
+        if (isConfirm) {
+            $.ajax({
+                type: "POST",
+                url: "<?=site_url('C_personnel/reset_password')?>",
+                data: { id_personnel: id_personnel },
+                dataType: "json",
+                success: function (data) {
+                    if (data.status == 'success') {
+                        swal({
+                            title: "Succès",
+                            text: data.message,
+                            type: "success"
+                        }, function () {
+                            // Recharge la page une fois le swal fermé, pour voir l'état à jour
+                            window.location = "<?=site_url('C_personnel')?>";
+                        });
+                    } else {
+                        swal("Erreur", data.message, "error");
+                    }
+                },
+                error: function () {
+                    swal("Erreur", "Une erreur est survenue lors de la réinitialisation.", "error");
+                }
+            });
+        }
+    });
+});
 
     });
 </script>
