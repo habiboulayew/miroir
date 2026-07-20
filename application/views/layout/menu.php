@@ -57,7 +57,7 @@
 <?php if($this->session->sso == false): ?>
 <ul class="nav flex-column">
     <li class="nav-item">
-        <a class="nav-link <?= $id == 'password' ? 'active' : '' ?>""  href="<?= site_url('C_personnel/password') ?>">
+        <a class="nav-link <?= $id == 'password' ? 'active' : '' ?>"  href="<?= site_url('C_personnel/password') ?>">
             <span data-feather="alert-octagon"></span>
             Changement de mot de passe
         </a>
